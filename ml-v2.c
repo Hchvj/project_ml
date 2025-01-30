@@ -27,7 +27,7 @@ void descente_de_gradient(int* X,int* Y,int n,float* a,float* b)
     //MSE=somme((y-y')^2)/n=somme(y^2-2ayx-2yb+(ax)^2+2bax+b^2)/n
     float erreur=0.01;
     float pas=0.01;
-    while((deriveea(X,Y,n,*a,*b)<=erreur)||(deriveeb(X,Y,n,*a,*b)<=erreur))
+    while((deriveea(X,Y,n,*a,*b)>=erreur)||(deriveeb(X,Y,n,*a,*b)>=erreur))
     {
         *a=*a-deriveea(X,Y,n,*a,*b)*pas;
         *b=*b-deriveeb(X,Y,n,*a,*b)*pas;
